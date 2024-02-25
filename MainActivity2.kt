@@ -3,7 +3,7 @@ package com.noah.viewbindingtest1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.noah.viewbindingtest1.databinding.ActivityMainBinding
-
+//뷰 바인딩 사용법
 class MainActivity : AppCompatActivity() {
 
     private var mBinding: ActivityMainBinding? =null
