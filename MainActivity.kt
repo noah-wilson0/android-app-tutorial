@@ -1,21 +1,30 @@
-package com.noah.textviewkt
+package com.noah.viewbindingtest1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import com.noah.viewbindingtest1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private var mBinding: ActivityMainBinding? =null
+    private  val binding get() = mBinding!!
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {  //앱이 최초 실행됬을 때 수행
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)   //xml 화면 뷰를 연결한다.
+//        setContentView(R.layout.activity_main)
 
-        var tv1 : TextView
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
 
-        tv1=findViewById(R.id.tv_title)
-        tv1.setText("Hello World..!");
+        setContentView(binding.root)
+        binding.btnGetbutton.setOnClickListener{
+            var resultText = binding.etId.text.toString()
+            binding.tvResult.setText(resultText)
+        }
+
+    }
+    override fun onDestroy(){
+        mBinding=null
+        super.onDestroy()
 
     }
 }
