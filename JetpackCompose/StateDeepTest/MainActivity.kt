@@ -27,7 +27,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 /**
  *     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1") 추가하기
- *
+ *       implementation("androidx.compose.runtime:runtime-livedata:1.6.8") 추가하기
  *     state가 변경되면 화면이 다시 그려진다.
  */
 class MainActivity : ComponentActivity() {
